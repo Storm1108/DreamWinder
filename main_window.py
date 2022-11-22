@@ -12,9 +12,9 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QWidget, QHBoxLayout, QLineEdit, QPushButton,\
     QListWidgetItem, QVBoxLayout, QListWidget, QApplication, QGridLayout, QLabel
 class Ui_Form(QWidget):
-    def __init__(self, Form, item, *args, **kwargs):
+    def UI_build(self, Form, item):
 
-        super(Ui_Form, self).__init__(*args, **kwargs)
+        # super(Ui_Form, self).__init__(*args, **kwargs)
         self._item = item
         Form.setObjectName("Form")
         Form.resize(400, 109)
@@ -326,11 +326,12 @@ class Ui_MainWindow(object):
         self.mainList.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.mainList.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.mainList.setObjectName("mainList")
-        item = QtWidgets.QListWidgetItem()
         for i in range(10):
                 item = QListWidgetItem(self.mainList)
-                item.setSizeHint(QtCore.QSize(100, 60))
-                widget = Ui_Form(item, self.mainList)
+                widget = QtWidgets.QMainWindow()
+                ui = Ui_Form()
+                ui.UI_build(widget, item)
+                item.setSizeHint(QtCore.QSize(400,110))
                 self.mainList.setItemWidget(item, widget)
                 # item = QtWidgets.QListWidgetItem()
                 # self.mainList.addItem(item)
