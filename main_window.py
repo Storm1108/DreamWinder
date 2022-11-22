@@ -11,6 +11,64 @@
 from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QWidget, QHBoxLayout, QLineEdit, QPushButton,\
     QListWidgetItem, QVBoxLayout, QListWidget, QApplication, QGridLayout, QLabel
+class Ui_Form(QWidget):
+    def __init__(self, Form, item, *args, **kwargs):
+
+        super(Ui_Form, self).__init__(*args, **kwargs)
+        self._item = item
+        Form.setObjectName("Form")
+        Form.resize(400, 109)
+        Form.setStyleSheet("background-color: rgb(255, 189, 196);\n"
+"background-color: rgba(248, 220, 255, 50);")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(Form)
+        self.horizontalLayout.setSpacing(10)
+        self.horizontalLayout.setObjectName("horizontalLayout")
+        self.formLayout = QtWidgets.QFormLayout()
+        self.formLayout.setObjectName("formLayout")
+        self.length = QtWidgets.QLabel(Form)
+        self.length.setObjectName("length")
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.length)
+        self.lengthChangable = QtWidgets.QLineEdit(Form)
+        self.lengthChangable.setObjectName("lengthChangable")
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lengthChangable)
+        self.diam = QtWidgets.QLabel(Form)
+        self.diam.setObjectName("diam")
+        self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.diam)
+        self.diamChangable = QtWidgets.QLineEdit(Form)
+        self.diamChangable.setObjectName("diamChangable")
+        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.diamChangable)
+        self.matr = QtWidgets.QLabel(Form)
+        self.matr.setObjectName("matr")
+        self.formLayout.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.matr)
+        self.matCahngable = QtWidgets.QLineEdit(Form)
+        self.matCahngable.setObjectName("matCahngable")
+        self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.matCahngable)
+        self.horizontalLayout.addLayout(self.formLayout)
+        self.edit_btn = QtWidgets.QPushButton(Form)
+        sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
+        sizePolicy.setHorizontalStretch(0)
+        sizePolicy.setVerticalStretch(0)
+        sizePolicy.setHeightForWidth(self.edit_btn.sizePolicy().hasHeightForWidth())
+        self.edit_btn.setSizePolicy(sizePolicy)
+        self.edit_btn.setMaximumSize(QtCore.QSize(16777215, 80))
+        self.edit_btn.setStyleSheet("background-color: rgb(179, 179, 179);")
+        self.edit_btn.setDefault(True)
+        self.edit_btn.setObjectName("edit_btn")
+        self.horizontalLayout.addWidget(self.edit_btn)
+
+        self.retranslateUi(Form)
+        QtCore.QMetaObject.connectSlotsByName(Form)
+
+    def retranslateUi(self, Form):
+        _translate = QtCore.QCoreApplication.translate
+        Form.setWindowTitle(_translate("Form", "Form"))
+        self.length.setText(_translate("Form", "Длина"))
+        self.lengthChangable.setText(_translate("Form", "Длина"))
+        self.diam.setText(_translate("Form", "Диаметр"))
+        self.diamChangable.setText(_translate("Form", "Диаметр"))
+        self.matr.setText(_translate("Form", "Материал"))
+        self.matCahngable.setText(_translate("Form", "Материал"))
+        self.edit_btn.setText(_translate("Form", " Изменить"))
 
 class ItemWidget(QWidget):
 
@@ -272,7 +330,7 @@ class Ui_MainWindow(object):
         for i in range(10):
                 item = QListWidgetItem(self.mainList)
                 item.setSizeHint(QtCore.QSize(100, 60))
-                widget = ItemWidget('Характеристики: {}'.format(i), item, self.mainList)
+                widget = Ui_Form(item, self.mainList)
                 self.mainList.setItemWidget(item, widget)
                 # item = QtWidgets.QListWidgetItem()
                 # self.mainList.addItem(item)
