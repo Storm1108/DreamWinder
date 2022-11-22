@@ -12,39 +12,38 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 from PyQt5.QtWidgets import QWidget, QHBoxLayout, QLineEdit, QPushButton,\
     QListWidgetItem, QVBoxLayout, QListWidget, QApplication, QGridLayout, QLabel
 class Ui_Form(QWidget):
-    def UI_build(self, Form, item):
-
-        # super(Ui_Form, self).__init__(*args, **kwargs)
+    def __init__(self, item, *args, **kwargs):
+        super(Ui_Form, self).__init__(*args, **kwargs)
         self._item = item
-        Form.setObjectName("Form")
-        Form.resize(400, 109)
-        Form.setStyleSheet("background-color: rgb(255, 189, 196);\n"
+        self.setObjectName("Form")
+        self.resize(400, 109)
+        self.setStyleSheet("background-color: rgb(255, 189, 196);\n"
 "background-color: rgba(248, 220, 255, 50);")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(Form)
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self)
         self.horizontalLayout.setSpacing(10)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.formLayout = QtWidgets.QFormLayout()
         self.formLayout.setObjectName("formLayout")
-        self.length = QtWidgets.QLabel(Form)
+        self.length = QtWidgets.QLabel(self)
         self.length.setObjectName("length")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.length)
-        self.lengthChangable = QtWidgets.QLineEdit(Form)
+        self.lengthChangable = QtWidgets.QLineEdit(self)
         self.lengthChangable.setObjectName("lengthChangable")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lengthChangable)
-        self.diam = QtWidgets.QLabel(Form)
+        self.diam = QtWidgets.QLabel(self)
         self.diam.setObjectName("diam")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.diam)
-        self.diamChangable = QtWidgets.QLineEdit(Form)
+        self.diamChangable = QtWidgets.QLineEdit(self)
         self.diamChangable.setObjectName("diamChangable")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.diamChangable)
-        self.matr = QtWidgets.QLabel(Form)
+        self.matr = QtWidgets.QLabel(self)
         self.matr.setObjectName("matr")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.matr)
-        self.matCahngable = QtWidgets.QLineEdit(Form)
+        self.matCahngable = QtWidgets.QLineEdit(self)
         self.matCahngable.setObjectName("matCahngable")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.matCahngable)
         self.horizontalLayout.addLayout(self.formLayout)
-        self.edit_btn = QtWidgets.QPushButton(Form)
+        self.edit_btn = QtWidgets.QPushButton(self)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
@@ -56,8 +55,8 @@ class Ui_Form(QWidget):
         self.edit_btn.setObjectName("edit_btn")
         self.horizontalLayout.addWidget(self.edit_btn)
 
-        self.retranslateUi(Form)
-        QtCore.QMetaObject.connectSlotsByName(Form)
+        self.retranslateUi(self)
+        QtCore.QMetaObject.connectSlotsByName(self)
 
     def retranslateUi(self, Form):
         _translate = QtCore.QCoreApplication.translate
@@ -328,22 +327,9 @@ class Ui_MainWindow(object):
         self.mainList.setObjectName("mainList")
         for i in range(10):
                 item = QListWidgetItem(self.mainList)
-                widget = QtWidgets.QMainWindow()
-                ui = Ui_Form()
-                ui.UI_build(widget, item)
-                item.setSizeHint(QtCore.QSize(400,110))
+                item.setSizeHint(QtCore.QSize(200,110))
+                widget = Ui_Form(item)
                 self.mainList.setItemWidget(item, widget)
-                # item = QtWidgets.QListWidgetItem()
-                # self.mainList.addItem(item)
-        # font = QtGui.QFont()
-        # font.setPointSize(24)
-        # item.setFont(font)
-        # self.mainList.addItem(item)
-        # item = QtWidgets.QListWidgetItem()
-        # font = QtGui.QFont()
-        # font.setPointSize(24)
-        # item.setFont(font)
-        # self.mainList.addItem(item)
         self.verticalLayout.addWidget(self.mainList)
         self.horizontalLayout_2.addLayout(self.verticalLayout)
         MainWindow.setCentralWidget(self.centralwidget)
