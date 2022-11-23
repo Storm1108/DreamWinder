@@ -9,51 +9,121 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-from PyQt5.QtWidgets import QWidget, QHBoxLayout, QLineEdit, QPushButton,\
-    QListWidgetItem, QVBoxLayout, QListWidget, QApplication, QGridLayout, QLabel
+from PyQt5.QtWidgets import QWidget, QLineEdit, QListWidgetItem, QGridLayout, QLabel
+
+
 class Ui_Form(QWidget):
     def __init__(self, item, *args, **kwargs):
         super(Ui_Form, self).__init__(*args, **kwargs)
-        self._item = item
         self.setObjectName("Form")
-        self.resize(400, 109)
-        self.setStyleSheet("background-color: rgb(255, 189, 196);\n"
-"background-color: rgba(248, 220, 255, 50);")
-        self.horizontalLayout = QtWidgets.QHBoxLayout(self)
-        self.horizontalLayout.setSpacing(10)
+        self.resize(439, 118)
+        self.setStyleSheet("")
+        self.verticalLayout = QtWidgets.QVBoxLayout(self)
+        self.verticalLayout.setContentsMargins(0, 0, 0, 0)
+        self.verticalLayout.setSpacing(0)
+        self.verticalLayout.setObjectName("verticalLayout")
+        self.line = QtWidgets.QFrame(self)
+        self.line.setStyleSheet("background-color: rgb(98, 98, 98);")
+        self.line.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line.setObjectName("line")
+        self.verticalLayout.addWidget(self.line)
+        self.horizontalFrame = QtWidgets.QFrame(self)
+        self.horizontalFrame.setAutoFillBackground(False)
+        self.horizontalFrame.setStyleSheet(".QFrame {background-image: url(lightTexture2.png);}")
+        self.horizontalFrame.setObjectName("horizontalFrame")
+        self.horizontalLayout = QtWidgets.QHBoxLayout(self.horizontalFrame)
+        self.horizontalLayout.setContentsMargins(20, 10, 30, 0)
+        self.horizontalLayout.setSpacing(0)
         self.horizontalLayout.setObjectName("horizontalLayout")
         self.formLayout = QtWidgets.QFormLayout()
+        self.formLayout.setLabelAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
+        self.formLayout.setFormAlignment(
+            QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignTop)
         self.formLayout.setObjectName("formLayout")
-        self.length = QtWidgets.QLabel(self)
+        self.length = QtWidgets.QLabel(self.horizontalFrame)
         self.length.setObjectName("length")
         self.formLayout.setWidget(0, QtWidgets.QFormLayout.LabelRole, self.length)
-        self.lengthChangable = QtWidgets.QLineEdit(self)
-        self.lengthChangable.setObjectName("lengthChangable")
-        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.lengthChangable)
-        self.diam = QtWidgets.QLabel(self)
+        self.label = QtWidgets.QLabel(self.horizontalFrame)
+        self.label.setObjectName("label")
+        self.formLayout.setWidget(0, QtWidgets.QFormLayout.FieldRole, self.label)
+        self.diam = QtWidgets.QLabel(self.horizontalFrame)
         self.diam.setObjectName("diam")
         self.formLayout.setWidget(1, QtWidgets.QFormLayout.LabelRole, self.diam)
-        self.diamChangable = QtWidgets.QLineEdit(self)
-        self.diamChangable.setObjectName("diamChangable")
-        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.diamChangable)
-        self.matr = QtWidgets.QLabel(self)
+        self.label_2 = QtWidgets.QLabel(self.horizontalFrame)
+        self.label_2.setObjectName("label_2")
+        self.formLayout.setWidget(1, QtWidgets.QFormLayout.FieldRole, self.label_2)
+        self.matr = QtWidgets.QLabel(self.horizontalFrame)
         self.matr.setObjectName("matr")
         self.formLayout.setWidget(2, QtWidgets.QFormLayout.LabelRole, self.matr)
-        self.matCahngable = QtWidgets.QLineEdit(self)
-        self.matCahngable.setObjectName("matCahngable")
-        self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.matCahngable)
+        self.label_3 = QtWidgets.QLabel(self.horizontalFrame)
+        self.label_3.setObjectName("label_3")
+        self.formLayout.setWidget(2, QtWidgets.QFormLayout.FieldRole, self.label_3)
         self.horizontalLayout.addLayout(self.formLayout)
-        self.edit_btn = QtWidgets.QPushButton(self)
+        spacerItem = QtWidgets.QSpacerItem(40, 20, QtWidgets.QSizePolicy.Expanding,
+                                           QtWidgets.QSizePolicy.Minimum)
+        self.horizontalLayout.addItem(spacerItem)
+        self.edit_btn = QtWidgets.QPushButton(self.horizontalFrame)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Fixed, QtWidgets.QSizePolicy.Fixed)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.edit_btn.sizePolicy().hasHeightForWidth())
         self.edit_btn.setSizePolicy(sizePolicy)
-        self.edit_btn.setMaximumSize(QtCore.QSize(16777215, 80))
-        self.edit_btn.setStyleSheet("background-color: rgb(179, 179, 179);")
+        self.edit_btn.setMaximumSize(QtCore.QSize(16777215, 50))
+        palette = QtGui.QPalette()
+        brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Active, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Inactive, QtGui.QPalette.Window, brush)
+        brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Button, brush)
+        brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Base, brush)
+        brush = QtGui.QBrush(QtGui.QColor(240, 240, 240))
+        brush.setStyle(QtCore.Qt.SolidPattern)
+        palette.setBrush(QtGui.QPalette.Disabled, QtGui.QPalette.Window, brush)
+        self.edit_btn.setPalette(palette)
+        font = QtGui.QFont()
+        font.setFamily("Andale Mono")
+        font.setPointSize(18)
+        self.edit_btn.setFont(font)
+        self.edit_btn.setStyleSheet("background-color: rgb(240, 240, 240);\n"
+                                    "color: rgb(79, 79, 79);")
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("free-icon-edit-info-7033287.png"), QtGui.QIcon.Normal,
+                       QtGui.QIcon.Off)
+        self.edit_btn.setIcon(icon)
+        self.edit_btn.setIconSize(QtCore.QSize(48, 48))
         self.edit_btn.setDefault(True)
         self.edit_btn.setObjectName("edit_btn")
         self.horizontalLayout.addWidget(self.edit_btn)
+        self.verticalLayout.addWidget(self.horizontalFrame)
+        self.line_2 = QtWidgets.QFrame(self)
+        self.line_2.setStyleSheet("background-color: rgb(98, 98, 98);")
+        self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
+        self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
+        self.line_2.setObjectName("line_2")
+        self.verticalLayout.addWidget(self.line_2)
+        spacerItem1 = QtWidgets.QSpacerItem(20, 200, QtWidgets.QSizePolicy.Minimum,
+                                            QtWidgets.QSizePolicy.Expanding)
+        self.verticalLayout.addItem(spacerItem1)
 
         self.retranslateUi(self)
         QtCore.QMetaObject.connectSlotsByName(self)
@@ -62,23 +132,24 @@ class Ui_Form(QWidget):
         _translate = QtCore.QCoreApplication.translate
         Form.setWindowTitle(_translate("Form", "Form"))
         self.length.setText(_translate("Form", "Длина"))
-        self.lengthChangable.setText(_translate("Form", "Длина"))
+        self.label.setText(_translate("Form", "TextLabel"))
         self.diam.setText(_translate("Form", "Диаметр"))
-        self.diamChangable.setText(_translate("Form", "Диаметр"))
+        self.label_2.setText(_translate("Form", "TextLabel"))
         self.matr.setText(_translate("Form", "Материал"))
-        self.matCahngable.setText(_translate("Form", "Материал"))
+        self.label_3.setText(_translate("Form", "TextLabel"))
         self.edit_btn.setText(_translate("Form", " Изменить"))
+
 
 class ItemWidget(QWidget):
 
     def __init__(self, text, item, *args, **kwargs):
         super(ItemWidget, self).__init__(*args, **kwargs)
-        self._item = item              # Сохраните ссылку на объект элемента списка
+        self._item = item  # Сохраните ссылку на объект элемента списка
         self.btn = QtWidgets.QPushButton()
         self.btn.setText("Изменить")
         layout = QGridLayout(self)
         layout.addWidget(QLabel(f'Конфигурация ', self), 0, 0)
-        layout.addWidget(QLineEdit(text, self),  1, 0)
+        layout.addWidget(QLineEdit(text, self), 1, 0)
         layout.addWidget(self.btn, 0, 1, 2, 1)
 
 
@@ -97,7 +168,7 @@ class Ui_MainWindow(object):
         MainWindow.setContextMenuPolicy(QtCore.Qt.DefaultContextMenu)
         MainWindow.setAcceptDrops(False)
         MainWindow.setStyleSheet("font: 13pt \"Times New Roman\";\n"
-"background-color: rgb(236, 251, 255);")
+                                 "background-color: rgb(236, 251, 255);")
         MainWindow.setToolButtonStyle(QtCore.Qt.ToolButtonIconOnly)
         MainWindow.setDocumentMode(False)
         MainWindow.setTabShape(QtWidgets.QTabWidget.Rounded)
@@ -151,7 +222,7 @@ class Ui_MainWindow(object):
         self.verticalLayout.addWidget(self.label_3)
         self.line_2 = QtWidgets.QFrame(self.centralwidget)
         self.line_2.setStyleSheet("color: rgb(112, 112, 112);\n"
-"background-color: rgb(112, 112, 112);")
+                                  "background-color: rgb(112, 112, 112);")
         self.line_2.setLineWidth(5)
         self.line_2.setFrameShape(QtWidgets.QFrame.HLine)
         self.line_2.setFrameShadow(QtWidgets.QFrame.Sunken)
@@ -258,11 +329,11 @@ class Ui_MainWindow(object):
         self.btn_build.setMouseTracking(False)
         self.btn_build.setAutoFillBackground(False)
         self.btn_build.setStyleSheet("background-color: rgba(0, 24, 47, 50);\n"
-"border-color: rgb(76, 76, 76);\n"
-"selection-color: rgb(147, 147, 147);\n"
-"selection-background-color: rgb(108, 108, 108);\n"
-"font: 15pt \".AppleSystemUIFont\";\n"
-"color: rgb(44, 44, 44);")
+                                     "border-color: rgb(76, 76, 76);\n"
+                                     "selection-color: rgb(147, 147, 147);\n"
+                                     "selection-background-color: rgb(108, 108, 108);\n"
+                                     "font: 15pt \".AppleSystemUIFont\";\n"
+                                     "color: rgb(44, 44, 44);")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("free-icon-create-929256.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_build.setIcon(icon)
@@ -280,8 +351,8 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.pushButton.sizePolicy().hasHeightForWidth())
         self.pushButton.setSizePolicy(sizePolicy)
         self.pushButton.setStyleSheet("background-color: rgba(0, 24, 47, 50);\n"
-"font: 15pt \".AppleSystemUIFont\";\n"
-"color: rgb(44, 44, 44);")
+                                      "font: 15pt \".AppleSystemUIFont\";\n"
+                                      "color: rgb(44, 44, 44);")
         self.pushButton.setText("")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("free-icon-add-button-2740600.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -297,8 +368,8 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.pushButton_2.sizePolicy().hasHeightForWidth())
         self.pushButton_2.setSizePolicy(sizePolicy)
         self.pushButton_2.setStyleSheet("background-color: rgba(0, 24, 47, 50);\n"
-"font: 15pt \".AppleSystemUIFont\";\n"
-"color: rgb(44, 44, 44);")
+                                        "font: 15pt \".AppleSystemUIFont\";\n"
+                                        "color: rgb(44, 44, 44);")
         self.pushButton_2.setText("")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap("free-icon-font-trash-3917378.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -326,10 +397,10 @@ class Ui_MainWindow(object):
         self.mainList.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.mainList.setObjectName("mainList")
         for i in range(10):
-                item = QListWidgetItem(self.mainList)
-                item.setSizeHint(QtCore.QSize(200,110))
-                widget = Ui_Form(item)
-                self.mainList.setItemWidget(item, widget)
+            item = QListWidgetItem(self.mainList)
+            item.setSizeHint(QtCore.QSize(300, 75))
+            widget = Ui_Form(item)
+            self.mainList.setItemWidget(item, widget)
         self.verticalLayout.addWidget(self.mainList)
         self.horizontalLayout_2.addLayout(self.verticalLayout)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -389,7 +460,8 @@ class Ui_MainWindow(object):
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Dream Winder"))
-        self.label_3.setText(_translate("MainWindow", "<html><head/><body><p><span style=\" font-size:22pt;\">Dream Winder</span></p></body></html>"))
+        self.label_3.setText(_translate("MainWindow",
+                                        "<html><head/><body><p><span style=\" font-size:22pt;\">Dream Winder</span></p></body></html>"))
         self.btn_build.setText(_translate("MainWindow", "Создать G-code файл"))
         __sortingEnabled = self.mainList.isSortingEnabled()
         self.mainList.setSortingEnabled(False)
@@ -417,6 +489,7 @@ class Ui_MainWindow(object):
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
     ui = Ui_MainWindow()
