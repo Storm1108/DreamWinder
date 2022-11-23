@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1063</width>
-    <height>230</height>
+    <width>894</width>
+    <height>228</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -151,6 +151,15 @@ font: 150 14pt &quot;PT Mono&quot;;</string>
          </item>
          <item>
           <layout class="QFormLayout" name="formLayout">
+           <property name="labelAlignment">
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
+           </property>
+           <property name="formAlignment">
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+           </property>
+           <property name="verticalSpacing">
+            <number>10</number>
+           </property>
            <property name="topMargin">
             <number>10</number>
            </property>
@@ -165,7 +174,7 @@ color: rgb(0, 0, 0);
 font: 75 14pt &quot;PT Mono&quot;;</string>
              </property>
              <property name="text">
-              <string>Намоточный материал</string>
+              <string>Намоточный материал:</string>
              </property>
             </widget>
            </item>
@@ -264,10 +273,10 @@ font: 75 14pt &quot;PT Mono&quot;;</string>
             <enum>QFormLayout::DontWrapRows</enum>
            </property>
            <property name="labelAlignment">
-            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+            <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
            </property>
            <property name="formAlignment">
-            <set>Qt::AlignRight|Qt::AlignTop|Qt::AlignTrailing</set>
+            <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
            </property>
            <property name="verticalSpacing">
             <number>10</number>
@@ -282,6 +291,9 @@ font: 75 14pt &quot;PT Mono&quot;;</string>
             <widget class="QLabel" name="layerCountNC">
              <property name="text">
               <string>Количество слоев намотки:</string>
+             </property>
+             <property name="alignment">
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
             </widget>
            </item>
@@ -300,17 +312,20 @@ font: 75 14pt &quot;PT Mono&quot;;</string>
                <verstretch>0</verstretch>
               </sizepolicy>
              </property>
+             <property name="layoutDirection">
+              <enum>Qt::LeftToRight</enum>
+             </property>
              <property name="text">
               <string>Первичная обмотка:</string>
              </property>
              <property name="alignment">
-              <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+              <set>Qt::AlignRight|Qt::AlignTrailing|Qt::AlignVCenter</set>
              </property>
              <property name="margin">
               <number>0</number>
              </property>
              <property name="indent">
-              <number>60</number>
+              <number>0</number>
              </property>
             </widget>
            </item>
