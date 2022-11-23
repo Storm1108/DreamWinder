@@ -24,7 +24,7 @@ class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.setEnabled(True)
-        MainWindow.resize(1300, 600)
+        MainWindow.resize(1420, 700)
         font = QtGui.QFont()
         font.setFamily("Times New Roman")
         font.setPointSize(13)
@@ -52,7 +52,7 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.label.sizePolicy().hasHeightForWidth())
         self.label.setSizePolicy(sizePolicy)
         self.label.setMinimumSize(QtCore.QSize(0, 0))
-        self.label.setMaximumSize(QtCore.QSize(350, 16777215))
+        self.label.setMaximumSize(QtCore.QSize(250, 16777215))
         self.label.setBaseSize(QtCore.QSize(200, 0))
         self.label.setText("")
         self.label.setTextFormat(QtCore.Qt.PlainText)
@@ -323,7 +323,7 @@ class Ui_MainWindow(object):
     def configFill(self):
         for i in range(10):
             item = QListWidgetItem(self.mainList)
-            item.setSizeHint(QtCore.QSize(900, 102))
+            item.setSizeHint(QtCore.QSize(1100, 120))
             widget = Ui_Form(item)
             arr = ['spiral.png', 'tetra.png', 'vint.png', 'konus.png']
             widget.prevImage.setPixmap(QtGui.QPixmap(''.join(sample(arr, 1))))
