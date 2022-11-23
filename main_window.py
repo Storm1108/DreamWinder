@@ -9,7 +9,7 @@
 
 
 from PyQt5.QtWidgets import QListWidgetItem
-
+from random import sample
 from preview import *
 
 
@@ -263,11 +263,7 @@ class Ui_MainWindow(object):
         self.mainList.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.mainList.setSelectionMode(QtWidgets.QAbstractItemView.SingleSelection)
         self.mainList.setObjectName("mainList")
-        for i in range(10):
-            item = QListWidgetItem(self.mainList)
-            item.setSizeHint(QtCore.QSize(850, 102))
-            widget = Ui_Form(item)
-            self.mainList.setItemWidget(item, widget)
+        self.configFill()
         self.verticalLayout.addWidget(self.mainList)
         self.horizontalLayout_2.addLayout(self.verticalLayout)
         MainWindow.setCentralWidget(self.centralwidget)
@@ -323,6 +319,15 @@ class Ui_MainWindow(object):
         self.menuBar.addAction(self.menu_5.menuAction())
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+    def configFill(self):
+        for i in range(10):
+            item = QListWidgetItem(self.mainList)
+            item.setSizeHint(QtCore.QSize(900, 102))
+            widget = Ui_Form(item)
+            arr = ['spiral.png', 'tetra.png', 'vint.png', 'konus.png']
+            widget.prevImage.setPixmap(QtGui.QPixmap(''.join(sample(arr, 1))))
+            self.mainList.setItemWidget(item, widget)
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
