@@ -16,8 +16,8 @@ class Ui_Form(QtWidgets.QWidget, Ui_ConfigElement):
     def __init__(self, item, *args, **kwargs):
         super(Ui_Form, self).__init__(*args, **kwargs)
         self.setupUi(self)
-        self.mainFrame.setStyleSheet('.QWidget {background-image: url(lightTexture2.png);}')
-
+        self.mainFrame.setStyleSheet(
+            ".QFrame {background-image: url(lightTexture2.png);}")
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
