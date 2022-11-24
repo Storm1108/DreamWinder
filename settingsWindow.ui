@@ -702,6 +702,18 @@ selection-color: rgb(164, 164, 164);</string>
           </item>
           <item>
            <widget class="QFrame" name="rightFrame">
+            <property name="sizePolicy">
+             <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
+              <horstretch>0</horstretch>
+              <verstretch>0</verstretch>
+             </sizepolicy>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>260</width>
+              <height>16777215</height>
+             </size>
+            </property>
             <property name="styleSheet">
              <string notr="true">font: 75 14pt &quot;PT Mono&quot;;</string>
             </property>

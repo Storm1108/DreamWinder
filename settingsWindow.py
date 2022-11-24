@@ -14,7 +14,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_SettingWindow(object):
     def setupUi(self, SettingWindow):
         SettingWindow.setObjectName("SettingWindow")
-        SettingWindow.resize(1324, 658)
+        SettingWindow.resize(1500, 700)
         self.centralwidget = QtWidgets.QWidget(SettingWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.mainLayout = QtWidgets.QVBoxLayout(self.centralwidget)
@@ -204,7 +204,7 @@ class Ui_SettingWindow(object):
         self.middleFrame.setStyleSheet("font: 75 14pt \"PT Mono\";")
         self.middleFrame.setObjectName("middleFrame")
         self.middleLayout = QtWidgets.QVBoxLayout(self.middleFrame)
-        self.middleLayout.setContentsMargins(5, 5, 5, 5)
+        self.middleLayout.setContentsMargins(5, 20, 5, 5)
         self.middleLayout.setObjectName("middleLayout")
         self.tableSettingLayout = QtWidgets.QHBoxLayout()
         self.tableSettingLayout.setContentsMargins(10, -1, 10, -1)
@@ -229,7 +229,8 @@ class Ui_SettingWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.addLayer_btn.sizePolicy().hasHeightForWidth())
         self.addLayer_btn.setSizePolicy(sizePolicy)
-        self.addLayer_btn.setStyleSheet("background-color: rgba(51, 102, 153, 50);")
+        self.addLayer_btn.setStyleSheet("QPushButton {background-color: rgba(51, 102, 153, 50);}"
+                                        "QPushButton:pressed {background-color: rgba(51, 102, 153, 100);}")
         icon = QtGui.QIcon()
         icon.addPixmap(QtGui.QPixmap("free-icon-add-button-2740600.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.addLayer_btn.setIcon(icon)
@@ -242,7 +243,8 @@ class Ui_SettingWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.delLayer_btn.sizePolicy().hasHeightForWidth())
         self.delLayer_btn.setSizePolicy(sizePolicy)
-        self.delLayer_btn.setStyleSheet("background-color: rgba(51, 102, 153, 50);")
+        self.delLayer_btn.setStyleSheet("QPushButton {background-color: rgba(51, 102, 153, 50);}"
+                                        "QPushButton:pressed {background-color: rgba(51, 102, 153, 100);}")
         icon1 = QtGui.QIcon()
         icon1.addPixmap(QtGui.QPixmap("free-icon-font-trash-3917378.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.delLayer_btn.setIcon(icon1)
@@ -256,8 +258,15 @@ class Ui_SettingWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.mainTable.sizePolicy().hasHeightForWidth())
         self.mainTable.setSizePolicy(sizePolicy)
-        self.mainTable.setStyleSheet("")
-        self.mainTable.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContentsOnFirstShow)
+        self.mainTable.setStyleSheet("QTableWidget {border-image :url(text2.png) 0 0 0 0 stretch stretch;"
+                                     "border: 2px solid blue;"
+                                     "border-radius: 4px;}"
+                                     "QHeaderView::section:horizontal {"
+                                     "color: rgb(0, 0, 0);"
+                                     "border: solid black;"
+                                     "background-color:rgba(51, 102, 204, 50);}")
+        # "background-repeat: no-repeat ")
+        self.mainTable.setSizeAdjustPolicy(QtWidgets.QAbstractScrollArea.AdjustToContents)
         self.mainTable.setEditTriggers(QtWidgets.QAbstractItemView.NoEditTriggers)
         self.mainTable.setSelectionBehavior(QtWidgets.QAbstractItemView.SelectRows)
         self.mainTable.setShowGrid(True)
@@ -506,16 +515,16 @@ class Ui_SettingWindow(object):
         self.heatShrinkFrame.setFrameShape(QtWidgets.QFrame.StyledPanel)
         self.heatShrinkFrame.setObjectName("heatShrinkFrame")
         self.heatShrinkFrame.setStyleSheet(".QFrame {"
-                                        "border: 1px solid gray;"
-                                        "border-radius: 5px;"
-                                        "spacing: 4px;}"
-                                        "QLabel {color: rgb(0, 51, 102);}"
-                                        "QSpinBox {"
-                                        "color: rgb(0, 51, 102);"
-                                        "background-color: rgba(51, 102, 204, 50);"
-                                        "border: 1px solid gray;"
-                                        "border-radius: 4px;"
-                                        "spacing: 15px;}")
+                                           "border: 1px solid gray;"
+                                           "border-radius: 5px;"
+                                           "spacing: 4px;}"
+                                           "QLabel {color: rgb(0, 51, 102);}"
+                                           "QSpinBox {"
+                                           "color: rgb(0, 51, 102);"
+                                           "background-color: rgba(51, 102, 204, 50);"
+                                           "border: 1px solid gray;"
+                                           "border-radius: 4px;"
+                                           "spacing: 15px;}")
         self.heatShrinkLayout = QtWidgets.QFormLayout(self.heatShrinkFrame)
         self.heatShrinkLayout.setContentsMargins(20, -1, -1, -1)
         self.heatShrinkLayout.setObjectName("heatShrinkLayout")
@@ -640,6 +649,7 @@ class Ui_SettingWindow(object):
         SettingWindow.setCentralWidget(self.centralwidget)
         self.statusbar = QtWidgets.QStatusBar(SettingWindow)
         self.statusbar.setObjectName("statusbar")
+
         SettingWindow.setStatusBar(self.statusbar)
 
         self.retranslateUi(SettingWindow)
