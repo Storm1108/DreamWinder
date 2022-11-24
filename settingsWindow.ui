@@ -1,0 +1,1280 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>SettingWindow</class>
+ <widget class="QMainWindow" name="SettingWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1324</width>
+    <height>658</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QVBoxLayout" name="mainLayout">
+    <property name="spacing">
+     <number>0</number>
+    </property>
+    <property name="leftMargin">
+     <number>0</number>
+    </property>
+    <property name="topMargin">
+     <number>0</number>
+    </property>
+    <property name="rightMargin">
+     <number>0</number>
+    </property>
+    <property name="bottomMargin">
+     <number>0</number>
+    </property>
+    <item>
+     <widget class="QTabWidget" name="submainTabWidget">
+      <property name="styleSheet">
+       <string notr="true">background-color: rgb(236, 251, 255);
+color: rgb(9, 9, 9);
+gridline-color: rgb(109, 109, 109);
+border-color: rgb(0, 0, 0);</string>
+      </property>
+      <property name="tabShape">
+       <enum>QTabWidget::Rounded</enum>
+      </property>
+      <property name="currentIndex">
+       <number>0</number>
+      </property>
+      <property name="elideMode">
+       <enum>Qt::ElideRight</enum>
+      </property>
+      <property name="usesScrollButtons">
+       <bool>false</bool>
+      </property>
+      <property name="documentMode">
+       <bool>true</bool>
+      </property>
+      <property name="tabBarAutoHide">
+       <bool>false</bool>
+      </property>
+      <widget class="QWidget" name="submainTabWidget2X" native="true">
+       <attribute name="title">
+        <string>Двух-осевой станок</string>
+       </attribute>
+       <layout class="QVBoxLayout" name="submainLayout">
+        <property name="spacing">
+         <number>0</number>
+        </property>
+        <property name="leftMargin">
+         <number>0</number>
+        </property>
+        <property name="topMargin">
+         <number>0</number>
+        </property>
+        <property name="rightMargin">
+         <number>0</number>
+        </property>
+        <property name="bottomMargin">
+         <number>0</number>
+        </property>
+        <item>
+         <layout class="QHBoxLayout" name="loadLayout">
+          <property name="spacing">
+           <number>10</number>
+          </property>
+          <property name="leftMargin">
+           <number>10</number>
+          </property>
+          <property name="topMargin">
+           <number>10</number>
+          </property>
+          <property name="rightMargin">
+           <number>10</number>
+          </property>
+          <property name="bottomMargin">
+           <number>10</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="leftFrame">
+            <property name="styleSheet">
+             <string notr="true">font: 75 14pt &quot;PT Mono&quot;;</string>
+            </property>
+            <layout class="QVBoxLayout" name="leftLayout">
+             <item>
+              <widget class="QLabel" name="infoTitle">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">
+color: rgb(51, 102, 153);
+font: 1200  16pt &quot;Helvetica Neue&quot;;</string>
+               </property>
+               <property name="text">
+                <string>Общие параметры намотки</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="infoLineTop">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(112, 112, 112);</string>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QFormLayout" name="infoLayoutTop">
+               <property name="labelAlignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QLabel" name="configLayer_NC">
+                 <property name="text">
+                  <string>Количество слоев:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="configLayer_C">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="configDiamRight_NC">
+                 <property name="text">
+                  <string>Диаметр правый, мм:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="configDiamRight_C">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="configDiamLeft_NC">
+                 <property name="text">
+                  <string>Диаметр левый, мм:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="configDiamLeft_C">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="0">
+                <widget class="QLabel" name="configLength_NC">
+                 <property name="text">
+                  <string>Длина заготовки, см:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="3" column="1">
+                <widget class="QLineEdit" name="configLength_C">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="0">
+                <widget class="QLabel" name="configFillLength_NC">
+                 <property name="text">
+                  <string>Длина материала, м:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="4" column="1">
+                <widget class="QLineEdit" name="configFillLength_C">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="Line" name="infoLineMiddle">
+               <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <layout class="QFormLayout" name="infoLayoutMiddle">
+               <property name="labelAlignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+               </property>
+               <property name="leftMargin">
+                <number>0</number>
+               </property>
+               <item row="0" column="0">
+                <widget class="QLabel" name="configTime_NC">
+                 <property name="text">
+                  <string>Ожидаемое время намотки, мин:</string>
+                 </property>
+                 <property name="textFormat">
+                  <enum>Qt::AutoText</enum>
+                 </property>
+                 <property name="scaledContents">
+                  <bool>false</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="0" column="1">
+                <widget class="QLineEdit" name="configTime_C">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="0">
+                <widget class="QLabel" name="configGlue_NC">
+                 <property name="text">
+                  <string>Ожидаемый расход клея, г:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="1" column="1">
+                <widget class="QLineEdit" name="configGlue_C">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="0">
+                <widget class="QLabel" name="configDiamReady_NC">
+                 <property name="text">
+                  <string>Диаметр готового изделия, мм:</string>
+                 </property>
+                </widget>
+               </item>
+               <item row="2" column="1">
+                <widget class="QLineEdit" name="configDiamReady_C">
+                 <property name="enabled">
+                  <bool>false</bool>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(255, 255, 255);</string>
+                 </property>
+                 <property name="readOnly">
+                  <bool>true</bool>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="Line" name="infoLineBottom">
+               <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="paramPhoto">
+               <property name="text">
+                <string>Макс размеры станка (схема)</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="leftLine">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(112, 112, 112);</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="middleFrame">
+            <property name="styleSheet">
+             <string notr="true">font: 75 14pt &quot;PT Mono&quot;;</string>
+            </property>
+            <layout class="QVBoxLayout" name="middleLayout">
+             <property name="leftMargin">
+              <number>5</number>
+             </property>
+             <property name="topMargin">
+              <number>5</number>
+             </property>
+             <property name="rightMargin">
+              <number>5</number>
+             </property>
+             <property name="bottomMargin">
+              <number>5</number>
+             </property>
+             <item>
+              <layout class="QHBoxLayout" name="tableSettingLayout">
+               <property name="spacing">
+                <number>20</number>
+               </property>
+               <property name="leftMargin">
+                <number>10</number>
+               </property>
+               <property name="rightMargin">
+                <number>10</number>
+               </property>
+               <item>
+                <widget class="QComboBox" name="presetComboBox">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgb(255, 255, 255);
+selection-color: rgb(164, 164, 164);</string>
+                 </property>
+                 <item>
+                  <property name="text">
+                   <string>Выбирете шаблон намотки</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Винт</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Спираль</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Тетра</string>
+                  </property>
+                 </item>
+                 <item>
+                  <property name="text">
+                   <string>Конус</string>
+                  </property>
+                 </item>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="addLayer_btn">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(51, 102, 153, 50);</string>
+                 </property>
+                 <property name="text">
+                  <string>Добавить слой</string>
+                 </property>
+                 <property name="icon">
+                  <iconset>
+                   <normaloff>free-icon-add-button-2740600.png</normaloff>free-icon-add-button-2740600.png</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>24</width>
+                   <height>24</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+               <item>
+                <widget class="QPushButton" name="delLayer_btn">
+                 <property name="sizePolicy">
+                  <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                   <horstretch>0</horstretch>
+                   <verstretch>0</verstretch>
+                  </sizepolicy>
+                 </property>
+                 <property name="styleSheet">
+                  <string notr="true">background-color: rgba(51, 102, 153, 50);</string>
+                 </property>
+                 <property name="text">
+                  <string>Удалить последний слой</string>
+                 </property>
+                 <property name="icon">
+                  <iconset>
+                   <normaloff>free-icon-font-trash-3917378.png</normaloff>free-icon-font-trash-3917378.png</iconset>
+                 </property>
+                 <property name="iconSize">
+                  <size>
+                   <width>24</width>
+                   <height>24</height>
+                  </size>
+                 </property>
+                </widget>
+               </item>
+              </layout>
+             </item>
+             <item>
+              <widget class="QTableWidget" name="mainTable">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="styleSheet">
+                <string notr="true"/>
+               </property>
+               <property name="sizeAdjustPolicy">
+                <enum>QAbstractScrollArea::AdjustToContentsOnFirstShow</enum>
+               </property>
+               <property name="editTriggers">
+                <set>QAbstractItemView::NoEditTriggers</set>
+               </property>
+               <property name="selectionBehavior">
+                <enum>QAbstractItemView::SelectRows</enum>
+               </property>
+               <property name="showGrid">
+                <bool>true</bool>
+               </property>
+               <property name="gridStyle">
+                <enum>Qt::SolidLine</enum>
+               </property>
+               <property name="cornerButtonEnabled">
+                <bool>false</bool>
+               </property>
+               <attribute name="horizontalHeaderVisible">
+                <bool>true</bool>
+               </attribute>
+               <attribute name="horizontalHeaderCascadingSectionResizes">
+                <bool>true</bool>
+               </attribute>
+               <attribute name="horizontalHeaderDefaultSectionSize">
+                <number>120</number>
+               </attribute>
+               <attribute name="horizontalHeaderHighlightSections">
+                <bool>true</bool>
+               </attribute>
+               <attribute name="horizontalHeaderMinimumSectionSize">
+                <number>10</number>
+               </attribute>
+               <attribute name="verticalHeaderVisible">
+                <bool>false</bool>
+               </attribute>
+               <row>
+                <property name="text">
+                 <string>1</string>
+                </property>
+               </row>
+               <row>
+                <property name="text">
+                 <string>2</string>
+                </property>
+               </row>
+               <row>
+                <property name="text">
+                 <string>3</string>
+                </property>
+               </row>
+               <column>
+                <property name="text">
+                 <string>№</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Длина слоя ,мм</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Диаметр слоя, мм</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Угол намотки, град</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Нач. координата, мм</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Материал намотки</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Скорость намотки</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Прим. длина материала, см</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Прим. обьем клея, г</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Прим. время, мин</string>
+                </property>
+               </column>
+               <column>
+                <property name="text">
+                 <string>Кол-во проходов</string>
+                </property>
+               </column>
+               <item row="0" column="0">
+                <property name="text">
+                 <string>1</string>
+                </property>
+               </item>
+               <item row="0" column="1">
+                <property name="text">
+                 <string>123</string>
+                </property>
+               </item>
+               <item row="0" column="2">
+                <property name="text">
+                 <string>80</string>
+                </property>
+               </item>
+               <item row="0" column="3">
+                <property name="text">
+                 <string>45</string>
+                </property>
+               </item>
+               <item row="0" column="4">
+                <property name="text">
+                 <string>10</string>
+                </property>
+               </item>
+               <item row="0" column="5">
+                <property name="text">
+                 <string/>
+                </property>
+               </item>
+               <item row="0" column="6">
+                <property name="text">
+                 <string/>
+                </property>
+               </item>
+               <item row="0" column="7">
+                <property name="text">
+                 <string/>
+                </property>
+               </item>
+               <item row="1" column="0">
+                <property name="text">
+                 <string>2</string>
+                </property>
+               </item>
+               <item row="1" column="1">
+                <property name="text">
+                 <string>123</string>
+                </property>
+               </item>
+               <item row="1" column="2">
+                <property name="text">
+                 <string>83</string>
+                </property>
+               </item>
+               <item row="1" column="3">
+                <property name="text">
+                 <string>30</string>
+                </property>
+               </item>
+               <item row="1" column="4">
+                <property name="text">
+                 <string>10</string>
+                </property>
+               </item>
+               <item row="2" column="0">
+                <property name="text">
+                 <string>3</string>
+                </property>
+               </item>
+               <item row="2" column="1">
+                <property name="text">
+                 <string>100</string>
+                </property>
+               </item>
+               <item row="2" column="2">
+                <property name="text">
+                 <string>85</string>
+                </property>
+               </item>
+               <item row="2" column="3">
+                <property name="text">
+                 <string>60</string>
+                </property>
+               </item>
+               <item row="2" column="4">
+                <property name="text">
+                 <string>10</string>
+                </property>
+               </item>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="Line" name="rightLine">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(112, 112, 112);</string>
+            </property>
+            <property name="orientation">
+             <enum>Qt::Vertical</enum>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="rightFrame">
+            <property name="styleSheet">
+             <string notr="true">font: 75 14pt &quot;PT Mono&quot;;</string>
+            </property>
+            <layout class="QVBoxLayout" name="rightLayout">
+             <property name="spacing">
+              <number>-1</number>
+             </property>
+             <item>
+              <widget class="QLabel" name="checklistTitle">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Maximum">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">
+color: rgb(51, 102, 153);
+font: 1200  20pt &quot;Helvetica Neue&quot;;</string>
+               </property>
+               <property name="text">
+                <string>Сохранение настроек</string>
+               </property>
+               <property name="alignment">
+                <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignVCenter</set>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="checklistTitleLine">
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(112, 112, 112);</string>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="prewrapCheck">
+               <property name="text">
+                <string>Предварительная обмотка</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="prewrapFrame">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(0, 51, 102);</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+               </property>
+               <property name="lineWidth">
+                <number>1</number>
+               </property>
+               <property name="midLineWidth">
+                <number>1</number>
+               </property>
+               <layout class="QFormLayout" name="prewrapLayout">
+                <property name="leftMargin">
+                 <number>20</number>
+                </property>
+                <item row="0" column="1">
+                 <widget class="QSpinBox" name="prewrapRPM_C">
+                  <property name="maximum">
+                   <number>60</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="prewrapRPM_NC">
+                  <property name="text">
+                   <string>RPM</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="prewrapWidth_NC">
+                  <property name="text">
+                   <string>Ширина материала</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QSpinBox" name="prewrapWidth_C">
+                  <property name="suffix">
+                   <string> мм</string>
+                  </property>
+                  <property name="maximum">
+                   <number>500</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="checklistUpperLine">
+               <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="mainwrapCheck">
+               <property name="enabled">
+                <bool>true</bool>
+               </property>
+               <property name="palette">
+                <palette>
+                 <active>
+                  <colorrole role="WindowText">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>9</red>
+                     <green>9</green>
+                     <blue>9</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                  <colorrole role="Button">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>236</red>
+                     <green>251</green>
+                     <blue>255</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                  <colorrole role="Text">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>9</red>
+                     <green>9</green>
+                     <blue>9</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                  <colorrole role="ButtonText">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>9</red>
+                     <green>9</green>
+                     <blue>9</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                  <colorrole role="Base">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>236</red>
+                     <green>251</green>
+                     <blue>255</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                  <colorrole role="Window">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>236</red>
+                     <green>251</green>
+                     <blue>255</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                 </active>
+                 <inactive>
+                  <colorrole role="WindowText">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>9</red>
+                     <green>9</green>
+                     <blue>9</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                  <colorrole role="Button">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>236</red>
+                     <green>251</green>
+                     <blue>255</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                  <colorrole role="Text">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>9</red>
+                     <green>9</green>
+                     <blue>9</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                  <colorrole role="ButtonText">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>9</red>
+                     <green>9</green>
+                     <blue>9</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                  <colorrole role="Base">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>236</red>
+                     <green>251</green>
+                     <blue>255</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                  <colorrole role="Window">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>236</red>
+                     <green>251</green>
+                     <blue>255</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                 </inactive>
+                 <disabled>
+                  <colorrole role="WindowText">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>9</red>
+                     <green>9</green>
+                     <blue>9</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                  <colorrole role="Button">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>236</red>
+                     <green>251</green>
+                     <blue>255</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                  <colorrole role="Text">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>9</red>
+                     <green>9</green>
+                     <blue>9</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                  <colorrole role="ButtonText">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>9</red>
+                     <green>9</green>
+                     <blue>9</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                  <colorrole role="Base">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>236</red>
+                     <green>251</green>
+                     <blue>255</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                  <colorrole role="Window">
+                   <brush brushstyle="SolidPattern">
+                    <color alpha="255">
+                     <red>236</red>
+                     <green>251</green>
+                     <blue>255</blue>
+                    </color>
+                   </brush>
+                  </colorrole>
+                 </disabled>
+                </palette>
+               </property>
+               <property name="layoutDirection">
+                <enum>Qt::LeftToRight</enum>
+               </property>
+               <property name="autoFillBackground">
+                <bool>false</bool>
+               </property>
+               <property name="text">
+                <string>Основная намотка</string>
+               </property>
+               <property name="icon">
+                <iconset>
+                 <normaloff>free-icon-create-929256.png</normaloff>free-icon-create-929256.png</iconset>
+               </property>
+               <property name="iconSize">
+                <size>
+                 <width>24</width>
+                 <height>24</height>
+                </size>
+               </property>
+               <property name="tristate">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="checklistUpperDownLine">
+               <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="heatShrinkCheck">
+               <property name="text">
+                <string>Обмотка термопленкой</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="heatShrinkFrame">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(0, 51, 102);</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <layout class="QFormLayout" name="heatShrinkLayout">
+                <property name="leftMargin">
+                 <number>20</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="heatShrinkRPM_NC">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="text">
+                   <string>RPM</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="heatShrinkWidth_NC">
+                  <property name="text">
+                   <string>Ширина материала</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QSpinBox" name="heatShrinkRPM_C">
+                  <property name="enabled">
+                   <bool>true</bool>
+                  </property>
+                  <property name="maximum">
+                   <number>60</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QSpinBox" name="heatShrinkWidth_C">
+                  <property name="wrapping">
+                   <bool>false</bool>
+                  </property>
+                  <property name="buttonSymbols">
+                   <enum>QAbstractSpinBox::UpDownArrows</enum>
+                  </property>
+                  <property name="accelerated">
+                   <bool>false</bool>
+                  </property>
+                  <property name="suffix">
+                   <string> см</string>
+                  </property>
+                  <property name="prefix">
+                   <string/>
+                  </property>
+                  <property name="maximum">
+                   <number>500</number>
+                  </property>
+                  <property name="singleStep">
+                   <number>1</number>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="checklistMiddleLine">
+               <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QCheckBox" name="heatGunCheck">
+               <property name="text">
+                <string>Процедура нагрева</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QFrame" name="heatGunFrame">
+               <property name="styleSheet">
+                <string notr="true">color: rgb(0, 51, 102);</string>
+               </property>
+               <property name="frameShape">
+                <enum>QFrame::StyledPanel</enum>
+               </property>
+               <layout class="QFormLayout" name="heatGunLayout">
+                <property name="leftMargin">
+                 <number>20</number>
+                </property>
+                <item row="0" column="0">
+                 <widget class="QLabel" name="heatGunRPM_NC">
+                  <property name="text">
+                   <string>RPM</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="0">
+                 <widget class="QLabel" name="heatGunSpeed_NC">
+                  <property name="text">
+                   <string>Скорость</string>
+                  </property>
+                 </widget>
+                </item>
+                <item row="0" column="1">
+                 <widget class="QSpinBox" name="heatGunRPM_C">
+                  <property name="maximum">
+                   <number>60</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="1" column="1">
+                 <widget class="QSpinBox" name="heatGunSpeed_C">
+                  <property name="suffix">
+                   <string> см/с</string>
+                  </property>
+                  <property name="maximum">
+                   <number>30</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="1">
+                 <widget class="QSpinBox" name="heatGunTime_C">
+                  <property name="suffix">
+                   <string> мин</string>
+                  </property>
+                  <property name="maximum">
+                   <number>300</number>
+                  </property>
+                 </widget>
+                </item>
+                <item row="2" column="0">
+                 <widget class="QLabel" name="heatGunTime_NC">
+                  <property name="text">
+                   <string>Длительность</string>
+                  </property>
+                 </widget>
+                </item>
+               </layout>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="checklistBottomUpLine">
+               <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLineEdit" name="configName">
+               <property name="font">
+                <font>
+                 <family>PT Mono</family>
+                 <pointsize>14</pointsize>
+                 <weight>9</weight>
+                 <italic>false</italic>
+                 <bold>false</bold>
+                </font>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">background-color: rgb(255, 255, 255);
+border-color: rgb(51, 51, 51);</string>
+               </property>
+               <property name="inputMask">
+                <string/>
+               </property>
+               <property name="text">
+                <string/>
+               </property>
+               <property name="maxLength">
+                <number>32767</number>
+               </property>
+               <property name="placeholderText">
+                <string>Введите имя конфигурации</string>
+               </property>
+               <property name="clearButtonEnabled">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="Line" name="checklistBottomDownLine">
+               <property name="frameShadow">
+                <enum>QFrame::Plain</enum>
+               </property>
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QPushButton" name="save_btn">
+               <property name="sizePolicy">
+                <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+                 <horstretch>0</horstretch>
+                 <verstretch>0</verstretch>
+                </sizepolicy>
+               </property>
+               <property name="styleSheet">
+                <string notr="true">font: 75 18pt &quot;Verdana&quot;;
+background-color: rgba(51, 102, 204, 97);</string>
+               </property>
+               <property name="text">
+                <string>Сохранить</string>
+               </property>
+               <property name="checkable">
+                <bool>false</bool>
+               </property>
+               <property name="flat">
+                <bool>false</bool>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </item>
+       </layout>
+      </widget>
+      <widget class="QWidget" name="submainTabWidget3X">
+       <attribute name="title">
+        <string>Трех-осевой станок</string>
+       </attribute>
+      </widget>
+      <widget class="QWidget" name="submainTabWidget4X">
+       <attribute name="title">
+        <string>Четырех-осевой станок</string>
+       </attribute>
+      </widget>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
