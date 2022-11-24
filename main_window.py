@@ -245,10 +245,15 @@ class Ui_MainWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.pushButton_2.sizePolicy().hasHeightForWidth())
         self.pushButton_2.setSizePolicy(sizePolicy)
-        self.pushButton_2.setStyleSheet("background-color: rgba(0, 24, 47, 50);\n"
-                                        "font: 15pt \".AppleSystemUIFont\";\n"
-                                        "color: rgb(44, 44, 44);\n"
-                                        "QPushButton:pressed {background-color: #e0e3ff;}")
+        self.pushButton_2.setStyleSheet("QPushButton {background-color: rgba(0, 24, 47, 50);\n"
+                                      "border-color: rgb(76, 76, 76);\n"
+                                      "selection-color: rgb(147, 147, 147);\n"
+                                      "selection-background-color: rgb(108, 108, 108);\n"
+                                      "font: 15pt \".AppleSystemUIFont\";\n"
+                                      "color: rgb(44, 44, 44);"
+                                      "border: 1px solid #a0a0b0;"
+                                      "border-radius: 3px;}\n"
+                                      "QPushButton:pressed {background-color: #e0e3ff;}\n")
         self.pushButton_2.setText("")
         icon2 = QtGui.QIcon()
         icon2.addPixmap(QtGui.QPixmap("free-icon-font-trash-3917378.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
@@ -329,6 +334,7 @@ class Ui_MainWindow(object):
         self.menuBar.addAction(self.menu_3.menuAction())
         self.menuBar.addAction(self.menu_4.menuAction())
         self.menuBar.addAction(self.menu_5.menuAction())
+        self.mainList.item(1)
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
@@ -339,8 +345,12 @@ class Ui_MainWindow(object):
             widget = Ui_Form(item)
             arr = ['spiral.png', 'tetra.png', 'vint.png', 'konus.png']
             widget.prevImage.setPixmap(QtGui.QPixmap(''.join(sample(arr, 1))))
+            widget.edit_btn.clicked.connect(self.editScript)
             self.mainList.setItemWidget(item, widget)
 
+    def editScript(self):
+        import settingsWindow
+        settingsWindow.init()
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Dream Winder"))

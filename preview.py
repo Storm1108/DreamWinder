@@ -9,7 +9,7 @@
 
 
 from PyQt5 import QtCore, QtGui, QtWidgets
-
+import settingsWindow
 
 class Ui_ConfigElement(object):
     def setupUi(self, ConfigElement):
@@ -242,6 +242,7 @@ class Ui_ConfigElement(object):
 
         self.retranslateUi(ConfigElement)
         QtCore.QMetaObject.connectSlotsByName(ConfigElement)
+
 
     def retranslateUi(self, ConfigElement):
         _translate = QtCore.QCoreApplication.translate
