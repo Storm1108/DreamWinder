@@ -41,7 +41,8 @@ class Ui_MainWindow(object):
         self.pauseButton = QtWidgets.QPushButton(self.progressWidget)
         self.pauseButton.setMinimumSize(QtCore.QSize(100, 30))
         self.pauseButton.setObjectName("pauseButton")
-        self.pauseButton.setStyleSheet("QPushButton {background-color: rgba(51, 102, 153, 50);}"
+        self.pauseButton.setStyleSheet("QPushButton {background-color: rgba(51, 102, 153, 50);"
+                                       "font: 75 15pt \"PT Mono\";}"
                                        "QPushButton:pressed {background-color: rgba(51, 102, 153, 100);}")
         self.progressLayout.addWidget(self.pauseButton)
         self.mainLayout.addWidget(self.progressWidget)
