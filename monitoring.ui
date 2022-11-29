@@ -6,7 +6,7 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>755</width>
+    <width>785</width>
     <height>605</height>
    </rect>
   </property>
@@ -21,9 +21,9 @@
     <string notr="true">background-color: rgb(228, 251, 255);
 color: rgb(0, 0, 0);</string>
    </property>
-   <layout class="QVBoxLayout" name="verticalLayout">
+   <layout class="QVBoxLayout" name="mainLayout">
     <item>
-     <widget class="QWidget" name="horizontalWidget" native="true">
+     <widget class="QWidget" name="progressWidget" native="true">
       <property name="sizePolicy">
        <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
         <horstretch>0</horstretch>
@@ -36,7 +36,7 @@ color: rgb(0, 0, 0);</string>
         <height>0</height>
        </size>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout_4">
+      <layout class="QHBoxLayout" name="progressLayout">
        <property name="spacing">
         <number>20</number>
        </property>
@@ -51,15 +51,15 @@ color: rgb(0, 0, 0);</string>
         </widget>
        </item>
        <item>
-        <widget class="QPushButton" name="pushButton">
+        <widget class="QPushButton" name="pauseButton">
          <property name="minimumSize">
           <size>
-           <width>80</width>
+           <width>100</width>
            <height>30</height>
           </size>
          </property>
          <property name="text">
-          <string>Пауза</string>
+          <string>Пауза/Пуск</string>
          </property>
         </widget>
        </item>
@@ -71,18 +71,18 @@ color: rgb(0, 0, 0);</string>
       <property name="styleSheet">
        <string notr="true">font: 75 15pt &quot;PT Mono&quot;;</string>
       </property>
-      <layout class="QHBoxLayout" name="horizontalLayout">
+      <layout class="QHBoxLayout" name="submainLayout">
        <item>
-        <widget class="QWidget" name="verticalWidget" native="true">
+        <widget class="QWidget" name="leftWidget" native="true">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_2">
+         <layout class="QVBoxLayout" name="leftLayout">
           <item>
-           <widget class="QLabel" name="rotorPositionText">
+           <widget class="QLabel" name="rotorTitle">
             <property name="styleSheet">
              <string notr="true">color: rgb(51, 102, 153);
 font: 1200  20pt &quot;Helvetica Neue&quot;;</string>
@@ -118,14 +118,14 @@ font: 1200  20pt &quot;Helvetica Neue&quot;;</string>
            </widget>
           </item>
           <item>
-           <widget class="QWidget" name="horizontalWidget" native="true">
+           <widget class="QWidget" name="rotorDataWidget" native="true">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_2">
+            <layout class="QHBoxLayout" name="rotorDataLayout">
              <item>
               <widget class="QLabel" name="currentDegreeLabel">
                <property name="styleSheet">
@@ -190,7 +190,7 @@ font: 1200  20pt &quot;Helvetica Neue&quot;;</string>
               </widget>
              </item>
              <item>
-              <widget class="QLCDNumber" name="currenRPM_LCD">
+              <widget class="QLCDNumber" name="currentRPM_LCD">
                <property name="sizePolicy">
                 <sizepolicy hsizetype="Fixed" vsizetype="Preferred">
                  <horstretch>0</horstretch>
@@ -227,7 +227,7 @@ font: 1200  20pt &quot;Helvetica Neue&quot;;</string>
            </widget>
           </item>
           <item>
-           <widget class="Line" name="line_2">
+           <widget class="Line" name="rotorSliderLine">
             <property name="frameShadow">
              <enum>QFrame::Plain</enum>
             </property>
@@ -237,7 +237,7 @@ font: 1200  20pt &quot;Helvetica Neue&quot;;</string>
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="sliderPositio">
+           <widget class="QLabel" name="sliderTitle">
             <property name="styleSheet">
              <string notr="true">color: rgb(51, 102, 153);
 font: 1200  20pt &quot;Helvetica Neue&quot;;</string>
@@ -470,14 +470,14 @@ font: 1200  20pt &quot;Helvetica Neue&quot;;</string>
            </widget>
           </item>
           <item>
-           <widget class="QWidget" name="horizontalWidget" native="true">
+           <widget class="QWidget" name="sliderDataWidget" native="true">
             <property name="sizePolicy">
              <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
               <horstretch>0</horstretch>
               <verstretch>0</verstretch>
              </sizepolicy>
             </property>
-            <layout class="QHBoxLayout" name="horizontalLayout_3">
+            <layout class="QHBoxLayout" name="sliderDataLayout">
              <item>
               <widget class="QLabel" name="currentPosLabel">
                <property name="styleSheet">
@@ -578,7 +578,7 @@ font: 1200  20pt &quot;Helvetica Neue&quot;;</string>
         </widget>
        </item>
        <item>
-        <widget class="Line" name="line">
+        <widget class="Line" name="middleLine">
          <property name="styleSheet">
           <string notr="true">background-color: rgb(102, 102, 102);</string>
          </property>
@@ -588,14 +588,154 @@ font: 1200  20pt &quot;Helvetica Neue&quot;;</string>
         </widget>
        </item>
        <item>
-        <widget class="QWidget" name="verticalWidget" native="true">
+        <widget class="QWidget" name="rightWidget" native="true">
          <property name="sizePolicy">
           <sizepolicy hsizetype="Expanding" vsizetype="Preferred">
            <horstretch>0</horstretch>
            <verstretch>0</verstretch>
           </sizepolicy>
          </property>
-         <layout class="QVBoxLayout" name="verticalLayout_3"/>
+         <layout class="QVBoxLayout" name="rightLayout">
+          <item>
+           <widget class="QLabel" name="label">
+            <property name="styleSheet">
+             <string notr="true">color: rgb(51, 102, 153);
+font: 1200  20pt &quot;Helvetica Neue&quot;;
+</string>
+            </property>
+            <property name="text">
+             <string>Текущие данные намотки</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <layout class="QFormLayout" name="dataLayout">
+            <item row="0" column="0">
+             <widget class="QLabel" name="layer_NC">
+              <property name="text">
+               <string>Слой в работе:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="1" column="0">
+             <widget class="QLabel" name="layerLeftTime_NC">
+              <property name="text">
+               <string>Осталось до намотки слоя:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="3" column="0">
+             <widget class="QLabel" name="timeEnding_NC">
+              <property name="text">
+               <string>Время окончания:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="2" column="0">
+             <widget class="QLabel" name="timeLeft_NC">
+              <property name="text">
+               <string>Осталось всего:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="4" column="0">
+             <widget class="QLabel" name="force_NC">
+              <property name="text">
+               <string>Текущее натяжение нити:</string>
+              </property>
+             </widget>
+            </item>
+            <item row="0" column="1">
+             <widget class="QLineEdit" name="layer_C"/>
+            </item>
+            <item row="1" column="1">
+             <widget class="QLineEdit" name="layerLeftTime_C"/>
+            </item>
+            <item row="2" column="1">
+             <widget class="QLineEdit" name="timeLeft_C"/>
+            </item>
+            <item row="4" column="1">
+             <widget class="QLineEdit" name="force_C"/>
+            </item>
+            <item row="3" column="1">
+             <widget class="QLineEdit" name="timeEnding_C"/>
+            </item>
+           </layout>
+          </item>
+          <item>
+           <widget class="QLabel" name="commandsTitle">
+            <property name="styleSheet">
+             <string notr="true">color: rgb(51, 102, 153);
+font: 1200  20pt &quot;Helvetica Neue&quot;;
+
+</string>
+            </property>
+            <property name="text">
+             <string>Команды G-code</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QListWidget" name="listWidget">
+            <property name="styleSheet">
+             <string notr="true">background-color: rgb(255, 255, 255);</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::Box</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Plain</enum>
+            </property>
+            <property name="editTriggers">
+             <set>QAbstractItemView::NoEditTriggers</set>
+            </property>
+            <property name="showDropIndicator" stdset="0">
+             <bool>false</bool>
+            </property>
+            <property name="alternatingRowColors">
+             <bool>false</bool>
+            </property>
+            <property name="movement">
+             <enum>QListView::Static</enum>
+            </property>
+            <property name="flow">
+             <enum>QListView::TopToBottom</enum>
+            </property>
+            <property name="layoutMode">
+             <enum>QListView::SinglePass</enum>
+            </property>
+            <property name="modelColumn">
+             <number>0</number>
+            </property>
+            <property name="uniformItemSizes">
+             <bool>false</bool>
+            </property>
+            <property name="selectionRectVisible">
+             <bool>false</bool>
+            </property>
+            <item>
+             <property name="text">
+              <string>Команда 1</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Команда 2</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Команда 3</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Команда 4</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+         </layout>
         </widget>
        </item>
       </layout>
