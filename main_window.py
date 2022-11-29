@@ -336,6 +336,9 @@ class Ui_MainWindow(object):
         self.menuBar.addAction(self.menu_5.menuAction())
         self.mainList.item(1)
         self.retranslateUi(MainWindow)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("icon.ico"), QtGui.QIcon.Selected, QtGui.QIcon.On)
+        MainWindow.setWindowIcon(icon)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
     def configFill(self):

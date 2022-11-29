@@ -16,7 +16,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 class Ui_SettingWindow(object):
     def setupUi(self, SettingWindow):
         SettingWindow.setObjectName("SettingWindow")
-        SettingWindow.resize(1200, 700)
+        SettingWindow.resize(1570, 700)
         self.centralwidget = QtWidgets.QWidget(SettingWindow)
         self.centralwidget.setObjectName("centralwidget")
         self.mainLayout = QtWidgets.QVBoxLayout(self.centralwidget)
@@ -47,6 +47,7 @@ class Ui_SettingWindow(object):
         self.leftFrame = QtWidgets.QFrame(self.submainTabWidget2X)
         self.leftFrame.setStyleSheet("font: 75 14pt \"PT Mono\";")
         self.leftFrame.setObjectName("leftFrame")
+        self.leftFrame.setMaximumWidth(250)
         self.leftLayout = QtWidgets.QVBoxLayout(self.leftFrame)
         self.leftLayout.setObjectName("leftLayout")
         self.infoTitle = QtWidgets.QLabel(self.leftFrame)
@@ -59,6 +60,7 @@ class Ui_SettingWindow(object):
                                      "color: rgb(51, 102, 153);\n"
                                      "font: 1200  16pt \"Helvetica Neue\";")
         self.infoTitle.setObjectName("infoTitle")
+        self.infoTitle.setAlignment(QtCore.Qt.AlignHCenter)
         self.leftLayout.addWidget(self.infoTitle)
         self.infoLineTop = QtWidgets.QFrame(self.leftFrame)
         self.infoLineTop.setStyleSheet("background-color: rgb(112, 112, 112);")
@@ -261,7 +263,7 @@ class Ui_SettingWindow(object):
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.mainTable.sizePolicy().hasHeightForWidth())
         self.mainTable.setSizePolicy(sizePolicy)
-        self.mainTable.setStyleSheet("QTableWidget {border-image :url(text2.png) 0 0 0 0 stretch stretch;"
+        self.mainTable.setStyleSheet("QTableWidget {border-image :url(resources/text2.png) 0 0 0 0 stretch stretch;"
                                      "border: 2px solid blue;"
                                      "border-radius: 4px;}"
                                      "QHeaderView::section:horizontal {"
@@ -317,7 +319,7 @@ class Ui_SettingWindow(object):
         item = QtWidgets.QTableWidgetItem()
         self.mainTable.setItem(0, 4, item)
         item = QtWidgets.QComboBox()
-        materials = ["Выбарите материал", "Материал1", "Материал2", "Материал3"]
+        materials = ["Выберите материал", "Материал1", "Материал2", "Материал3"]
         speeds = ["Медл.", "Сред.", "Быстр."]
         item.setStyleSheet("background-color: rgb(255, 255, 255);\n"
                            "selection-color: rgb(164, 164, 164);")
@@ -380,16 +382,16 @@ class Ui_SettingWindow(object):
         self.mainTable.horizontalHeader().setVisible(True)
         self.mainTable.horizontalHeader().setCascadingSectionResizes(True)
         self.mainTable.horizontalHeader().resizeSection(0, 20)
-        self.mainTable.horizontalHeader().resizeSection(1, 50)
-        self.mainTable.horizontalHeader().resizeSection(2, 70)
-        self.mainTable.horizontalHeader().resizeSection(3, 70)
-        self.mainTable.horizontalHeader().resizeSection(4, 95)
-        self.mainTable.horizontalHeader().resizeSection(5, 150)
-        self.mainTable.horizontalHeader().resizeSection(6, 80)
-        self.mainTable.horizontalHeader().resizeSection(7, 85)
-        self.mainTable.horizontalHeader().resizeSection(8, 50)
-        self.mainTable.horizontalHeader().resizeSection(9, 50)
-        self.mainTable.horizontalHeader().resizeSection(10, 80)
+        self.mainTable.horizontalHeader().resizeSection(1, 60)
+        self.mainTable.horizontalHeader().resizeSection(2, 90)
+        self.mainTable.horizontalHeader().resizeSection(3, 80)
+        self.mainTable.horizontalHeader().resizeSection(4, 105)
+        self.mainTable.horizontalHeader().resizeSection(5, 180)
+        self.mainTable.horizontalHeader().resizeSection(6, 90)
+        self.mainTable.horizontalHeader().resizeSection(7, 95)
+        self.mainTable.horizontalHeader().resizeSection(8, 60)
+        self.mainTable.horizontalHeader().resizeSection(9, 60)
+        self.mainTable.horizontalHeader().resizeSection(10, 90)
         self.mainTable.horizontalHeader().setHighlightSections(True)
         self.mainTable.verticalHeader().setVisible(False)
         self.middleLayout.addWidget(self.mainTable)
@@ -410,7 +412,7 @@ class Ui_SettingWindow(object):
         self.rightFrame.setObjectName("rightFrame")
         self.rightLayout = QtWidgets.QVBoxLayout(self.rightFrame)
         self.rightLayout.setObjectName("rightLayout")
-        self.rightFrame.setMaximumSize(270, 1688126)
+        self.rightFrame.setMaximumSize(300, 1688126)
         self.checklistTitle = QtWidgets.QLabel(self.rightFrame)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Maximum)
         sizePolicy.setHorizontalStretch(0)
@@ -419,7 +421,7 @@ class Ui_SettingWindow(object):
         self.checklistTitle.setSizePolicy(sizePolicy)
         self.checklistTitle.setStyleSheet("\n"
                                           "color: rgb(51, 102, 153);\n"
-                                          "font: 1200  20pt \"Helvetica Neue\";")
+                                          "font: 1200  19pt \"Helvetica Neue\";")
         self.checklistTitle.setAlignment(QtCore.Qt.AlignLeading | QtCore.Qt.AlignLeft | QtCore.Qt.AlignVCenter)
         self.checklistTitle.setObjectName("checklistTitle")
         self.rightLayout.addWidget(self.checklistTitle)
@@ -431,6 +433,7 @@ class Ui_SettingWindow(object):
         self.rightLayout.addWidget(self.checklistTitleLine)
         self.prewrapCheck = QtWidgets.QCheckBox(self.rightFrame)
         self.prewrapCheck.setObjectName("prewrapCheck")
+        self.prewrapCheck.setStyleSheet("QCheckBox {font: 75 14pt \"PT Mono\"} ")
         self.rightLayout.addWidget(self.prewrapCheck)
         self.prewrapFrame = QtWidgets.QFrame(self.rightFrame)
         self.prewrapFrame.setStyleSheet(".QFrame {"
@@ -475,6 +478,7 @@ class Ui_SettingWindow(object):
         self.rightLayout.addWidget(self.checklistUpperLine)
         self.mainwrapCheck = QtWidgets.QCheckBox(self.rightFrame)
         self.mainwrapCheck.setEnabled(True)
+        self.mainwrapCheck.setStyleSheet("QCheckBox {font: 75 14pt \"PT Mono\"} ")
         palette = QtGui.QPalette()
         brush = QtGui.QBrush(QtGui.QColor(9, 9, 9))
         brush.setStyle(QtCore.Qt.SolidPattern)
@@ -548,6 +552,7 @@ class Ui_SettingWindow(object):
         self.rightLayout.addWidget(self.checklistUpperDownLine)
         self.heatShrinkCheck = QtWidgets.QCheckBox(self.rightFrame)
         self.heatShrinkCheck.setObjectName("heatShrinkCheck")
+        self.heatShrinkCheck.setStyleSheet("QCheckBox {font: 75 14pt \"PT Mono\"} ")
         self.rightLayout.addWidget(self.heatShrinkCheck)
         self.heatShrinkFrame = QtWidgets.QFrame(self.rightFrame)
         self.heatShrinkFrame.setStyleSheet("color: rgb(0, 51, 102);")
@@ -596,6 +601,7 @@ class Ui_SettingWindow(object):
         self.rightLayout.addWidget(self.checklistMiddleLine)
         self.heatGunCheck = QtWidgets.QCheckBox(self.rightFrame)
         self.heatGunCheck.setObjectName("heatGunCheck")
+        self.heatGunCheck.setStyleSheet("QCheckBox {font: 75 14pt \"PT Mono\"} ")
         self.rightLayout.addWidget(self.heatGunCheck)
         self.heatGunFrame = QtWidgets.QFrame(self.rightFrame)
         self.heatGunFrame.setStyleSheet("color: rgb(0, 51, 102);")
@@ -692,6 +698,9 @@ class Ui_SettingWindow(object):
         self.statusbar.setObjectName("statusbar")
 
         SettingWindow.setStatusBar(self.statusbar)
+        icon = QtGui.QIcon()
+        icon.addPixmap(QtGui.QPixmap("icon.ico"), QtGui.QIcon.Selected, QtGui.QIcon.On)
+        SettingWindow.setWindowIcon(icon)
 
         self.retranslateUi(SettingWindow)
         self.submainTabWidget.setCurrentIndex(0)
@@ -700,7 +709,7 @@ class Ui_SettingWindow(object):
     def retranslateUi(self, SettingWindow):
         _translate = QtCore.QCoreApplication.translate
         SettingWindow.setWindowTitle(_translate("SettingWindow", "MainWindow"))
-        self.infoTitle.setText(_translate("SettingWindow", "Общие параметры намотки"))
+        self.infoTitle.setText(_translate("SettingWindow", "Общие параметры\nнамотки"))
         self.configLayer_NC.setText(_translate("SettingWindow", "Количество слоев:"))
         self.configDiamRight_NC.setText(_translate("SettingWindow", "Диаметр правый:"))
         self.configDiamLeft_NC.setText(_translate("SettingWindow", "Диаметр левый:"))
@@ -709,7 +718,7 @@ class Ui_SettingWindow(object):
         self.configTime_NC.setText(_translate("SettingWindow", "Ожидаемое\nвремя намотки:"))
         self.configGlue_NC.setText(_translate("SettingWindow", "Ожидаемый\nрасход клея, г:"))
         self.configDiamReady_NC.setText(_translate("SettingWindow", "Диаметр\nготового изделия:"))
-        self.paramPhoto.setText(_translate("SettingWindow", "Макс размеры станка (схема)"))
+        self.paramPhoto.setText(_translate("SettingWindow", "Макс размеры\nстанка (схема)"))
         self.presetComboBox.setItemText(0, _translate("SettingWindow", "Выбирете шаблон намотки"))
         self.presetComboBox.setItemText(1, _translate("SettingWindow", "Винт"))
         self.presetComboBox.setItemText(2, _translate("SettingWindow", "Спираль"))
