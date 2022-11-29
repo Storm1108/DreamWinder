@@ -58,7 +58,7 @@ class Ui_MainWindow(object):
         self.label.setBaseSize(QtCore.QSize(200, 0))
         self.label.setText("")
         self.label.setTextFormat(QtCore.Qt.PlainText)
-        self.label.setPixmap(QtGui.QPixmap("1646963286_7-abrakadabra-fun-p-geometricheskie-teksturi-9.png"))
+        self.label.setPixmap(QtGui.QPixmap("resources/1646963286_7-abrakadabra-fun-p-geometricheskie-teksturi-9.png"))
         self.label.setScaledContents(False)
         self.label.setWordWrap(False)
         self.label.setIndent(0)
@@ -207,7 +207,7 @@ class Ui_MainWindow(object):
                                      "border-radius: 3px;}\n"
                                      "QPushButton:pressed {background-color: #e0e3ff;}\n")
         icon = QtGui.QIcon()
-        icon.addPixmap(QtGui.QPixmap("free-icon-create-929256.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon.addPixmap(QtGui.QPixmap("resources/free-icon-create-929256.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.btn_build.setIcon(icon)
         self.btn_build.setIconSize(QtCore.QSize(24, 18))
         self.btn_build.setCheckable(False)
@@ -233,7 +233,7 @@ class Ui_MainWindow(object):
                                       "QPushButton:pressed {background-color: #e0e3ff;}\n")
         self.pushButton.setText("")
         icon1 = QtGui.QIcon()
-        icon1.addPixmap(QtGui.QPixmap("free-icon-add-button-2740600.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon1.addPixmap(QtGui.QPixmap("resources/free-icon-add-button-2740600.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
         self.pushButton.setIcon(icon1)
         self.pushButton.setIconSize(QtCore.QSize(24, 18))
         self.pushButton.setDefault(True)
@@ -246,17 +246,18 @@ class Ui_MainWindow(object):
         sizePolicy.setHeightForWidth(self.pushButton_2.sizePolicy().hasHeightForWidth())
         self.pushButton_2.setSizePolicy(sizePolicy)
         self.pushButton_2.setStyleSheet("QPushButton {background-color: rgba(0, 24, 47, 50);\n"
-                                      "border-color: rgb(76, 76, 76);\n"
-                                      "selection-color: rgb(147, 147, 147);\n"
-                                      "selection-background-color: rgb(108, 108, 108);\n"
-                                      "font: 15pt \".AppleSystemUIFont\";\n"
-                                      "color: rgb(44, 44, 44);"
-                                      "border: 1px solid #a0a0b0;"
-                                      "border-radius: 3px;}\n"
-                                      "QPushButton:pressed {background-color: #e0e3ff;}\n")
+                                        "border-color: rgb(76, 76, 76);\n"
+                                        "selection-color: rgb(147, 147, 147);\n"
+                                        "selection-background-color: rgb(108, 108, 108);\n"
+                                        "font: 15pt \".AppleSystemUIFont\";\n"
+                                        "color: rgb(44, 44, 44);"
+                                        "border: 1px solid #a0a0b0;"
+                                        "border-radius: 3px;}\n"
+                                        "QPushButton:pressed {background-color: #e0e3ff;}\n")
         self.pushButton_2.setText("")
         icon2 = QtGui.QIcon()
-        icon2.addPixmap(QtGui.QPixmap("free-icon-font-trash-3917378.png"), QtGui.QIcon.Normal, QtGui.QIcon.Off)
+        icon2.addPixmap(QtGui.QPixmap("resources/free-icon-font-trash-3917378.png"), QtGui.QIcon.Normal,
+                        QtGui.QIcon.Off)
         self.pushButton_2.setIcon(icon2)
         self.pushButton_2.setIconSize(QtCore.QSize(24, 18))
         self.pushButton_2.setDefault(True)
@@ -346,7 +347,7 @@ class Ui_MainWindow(object):
             item = QListWidgetItem(self.mainList)
             item.setSizeHint(QtCore.QSize(1100, 120))
             widget = Ui_Form(item)
-            arr = ['spiral.png', 'tetra.png', 'vint.png', 'konus.png']
+            arr = ['resources/spiral.png', 'resources/tetra.png', 'resources/vint.png', 'resources/konus.png']
             widget.prevImage.setPixmap(QtGui.QPixmap(''.join(sample(arr, 1))))
             widget.edit_btn.clicked.connect(self.editScript)
             self.mainList.setItemWidget(item, widget)
@@ -354,6 +355,7 @@ class Ui_MainWindow(object):
     def editScript(self):
         import settingsWindow
         settingsWindow.init()
+
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
         MainWindow.setWindowTitle(_translate("MainWindow", "Dream Winder"))

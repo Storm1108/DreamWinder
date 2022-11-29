@@ -23,7 +23,7 @@ class Ui_ConfigElement(object):
         self.mainFrame = QtWidgets.QFrame(ConfigElement)
         self.mainFrame.setAutoFillBackground(True)
         self.mainFrame.setStyleSheet(
-                ".QFrame {background-image: url(lightTexture2.png);}")
+                ".QFrame {background-image: url(resources/lightTexture2.png);}")
         self.mainFrame.setObjectName("mainFrame")
         self.submainLayout = QtWidgets.QVBoxLayout(self.mainFrame)
         self.submainLayout.setSizeConstraint(QtWidgets.QLayout.SetMaximumSize)
