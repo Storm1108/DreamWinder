@@ -13,7 +13,7 @@ from PyQt5 import QtCore, QtGui, QtWidgets
 
 class Ui_MainWindow(object):
     def setupUi(self, MainWindow):
-        MainWindow.setObjectName("MainWindow")
+        MainWindow.setObjectName("Monitor")
         MainWindow.resize(785, 605)
         MainWindow.setTabShape(QtWidgets.QTabWidget.Rounded)
         self.mainFrame = QtWidgets.QWidget(MainWindow)
@@ -397,7 +397,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "Monitor"))
         self.pauseButton.setText(_translate("MainWindow", "Пауза/Пуск"))
         self.rotorTitle.setText(_translate("MainWindow", "Положение ротора"))
         self.currentDegreeLabel.setText(_translate("MainWindow", "Текущий угол, град.: "))
