@@ -71,7 +71,7 @@ class Ui_MainWindow(object):
         self.line.setObjectName("line")
         self.horizontalLayout_2.addWidget(self.line)
         self.verticalLayout = QtWidgets.QVBoxLayout()
-        self.verticalLayout.setContentsMargins(-1, -1, -1, 10)
+        self.verticalLayout.setContentsMargins(-1, 10, -1, 10)
         self.verticalLayout.setSpacing(4)
         self.verticalLayout.setObjectName("verticalLayout")
         self.label_3 = QtWidgets.QLabel(self.centralwidget)
@@ -361,6 +361,9 @@ class Ui_MainWindow(object):
         MainWindow.setWindowTitle(_translate("MainWindow", "Dream Winder"))
         self.label_3.setText(_translate("MainWindow",
                                         "<html><head/><body><p><span style=\" font-size:22pt;\">Dream Winder</span></p></body></html>"))
+        self.label_3.setPixmap(QtGui.QPixmap("resources/text3.png"))
+        self.label_3.setMaximumHeight(60)
+        self.label_3.setScaledContents(False)
         self.btn_build.setText(_translate("MainWindow", "   Начать процесс намотки"))
         __sortingEnabled = self.mainList.isSortingEnabled()
         self.mainList.setSortingEnabled(False)

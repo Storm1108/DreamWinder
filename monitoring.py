@@ -45,6 +45,10 @@ class Ui_MainWindow(object):
                                        "font: 75 15pt \"PT Mono\";}"
                                        "QPushButton:pressed {background-color: rgba(51, 102, 153, 100);}")
         self.progressLayout.addWidget(self.pauseButton)
+        self.progressTitle = QtWidgets.QLabel(self.mainFrame)
+        self.progressTitle.setObjectName("progressTitle")
+        self.progressTitle.setStyleSheet("color: rgb(51, 102, 153);\n"
+                                      "font: 1200  20pt \"Helvetica Neue\";")
         self.mainLayout.addWidget(self.progressWidget)
         self.submainFrame = QtWidgets.QFrame(self.mainFrame)
         self.submainFrame.setStyleSheet("font: 75 15pt \"PT Mono\";")
@@ -67,14 +71,16 @@ class Ui_MainWindow(object):
         self.rotorTitle.setObjectName("rotorTitle")
         self.leftLayout.addWidget(self.rotorTitle)
         self.rotorPosition = QtWidgets.QDial(self.leftWidget)
-        self.rotorPosition.setEnabled(False)
+        self.rotorPosition.setEnabled(True)
         sizePolicy = QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Expanding, QtWidgets.QSizePolicy.Expanding)
         sizePolicy.setHorizontalStretch(0)
         sizePolicy.setVerticalStretch(0)
         sizePolicy.setHeightForWidth(self.rotorPosition.sizePolicy().hasHeightForWidth())
         self.rotorPosition.setSizePolicy(sizePolicy)
         self.rotorPosition.setMinimumSize(QtCore.QSize(270, 270))
-        self.rotorPosition.setStyleSheet("background-color: rgb(0, 51, 102);")
+        self.rotorPosition.setStyleSheet("QDial:disabled {background-color: rgb(0, 51, 102);"
+                                         "color: rgb(255,255,255);"
+                                         "alternate-background-color: rgb(255,255,255); }")
         self.rotorPosition.setObjectName("rotorPosition")
         self.leftLayout.addWidget(self.rotorPosition)
         self.rotorDataWidget = QtWidgets.QWidget(self.leftWidget)

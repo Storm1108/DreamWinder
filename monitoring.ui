@@ -597,7 +597,7 @@ font: 1200  20pt &quot;Helvetica Neue&quot;;</string>
          </property>
          <layout class="QVBoxLayout" name="rightLayout">
           <item>
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="dataTitle">
             <property name="styleSheet">
              <string notr="true">color: rgb(51, 102, 153);
 font: 1200  20pt &quot;Helvetica Neue&quot;;

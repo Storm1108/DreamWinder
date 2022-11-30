@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1324</width>
-    <height>658</height>
+    <height>727</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -56,7 +56,7 @@ border-color: rgb(0, 0, 0);</string>
       <property name="tabBarAutoHide">
        <bool>false</bool>
       </property>
-      <widget class="QWidget" name="submainTabWidget2X" native="true">
+      <widget class="QWidget" name="submainTabWidget2X">
        <attribute name="title">
         <string>Двух-осевой станок</string>
        </attribute>
