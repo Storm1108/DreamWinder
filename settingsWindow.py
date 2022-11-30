@@ -196,6 +196,9 @@ class Ui_SettingWindow(object):
         self.paramPhoto.setObjectName("paramPhoto")
         self.paramPhoto.setSizePolicy(
             QtWidgets.QSizePolicy(QtWidgets.QSizePolicy.Preferred, QtWidgets.QSizePolicy.Expanding))
+        self.paramPhoto.setPixmap(QtGui.QPixmap("resources/stanok.png"))
+        self.paramPhoto.setScaledContents(True)
+        self.paramPhoto.setMaximumSize(250, 200)
         self.leftLayout.addWidget(self.paramPhoto)
         self.loadLayout.addWidget(self.leftFrame)
         self.leftLine = QtWidgets.QFrame(self.submainTabWidget2X)
@@ -718,7 +721,6 @@ class Ui_SettingWindow(object):
         self.configTime_NC.setText(_translate("SettingWindow", "Ожидаемое\nвремя намотки:"))
         self.configGlue_NC.setText(_translate("SettingWindow", "Ожидаемый\nрасход клея, г:"))
         self.configDiamReady_NC.setText(_translate("SettingWindow", "Диаметр\nготового изделия:"))
-        self.paramPhoto.setText(_translate("SettingWindow", "Макс размеры\nстанка (схема)"))
         self.presetComboBox.setItemText(0, _translate("SettingWindow", "Выбирете шаблон намотки"))
         self.presetComboBox.setItemText(1, _translate("SettingWindow", "Винт"))
         self.presetComboBox.setItemText(2, _translate("SettingWindow", "Спираль"))
